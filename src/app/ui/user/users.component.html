@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  <span>Pagode Crew</span>
+</md-toolbar>
+<md-nav-list>
+  <md-list-item *ngFor="let user of users">
+    <img mdListAvatar src="https://i.pinimg.com/736x/8c/72/77/8c7277682c5bbb31960e7560dfcca0a8.jpg" alt="aap">
+    <a  mdLine> <b>{{user.name}}</b> Balans: {{user.balance}}</a>
+    <md-chip-list>
+      <md-chip *ngIf="isBestuur(user)" color="primary" selected="true">Bestuur</md-chip>
+      <md-chip *ngIf="isKern(user)" color="accent" selected="true">Kern</md-chip>
+    </md-chip-list>
+  </md-list-item>
+</md-nav-list>
