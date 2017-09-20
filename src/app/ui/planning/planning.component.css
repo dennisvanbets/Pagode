@@ -1,0 +1,10 @@
+.event-card {
+  width: 45%;
+  margin: 2%;
+}
+
+.event-card-cover-image {
+  background-size: cover;
+}
+
+

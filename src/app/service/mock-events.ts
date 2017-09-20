@@ -20,5 +20,6 @@ export const MOCK_EVENTS: Event[] = [
     startDate: new Date('1507064400'),
     endDate: new Date('1507068000'),
     todos: TODO_TEMPLATES
-  },
+  }
 ];
+

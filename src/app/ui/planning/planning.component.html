@@ -2,3 +2,44 @@
   <span>Planning</span>
 </md-toolbar>
 
+<section id="allEvents" class="mat-typography" *ngIf="events">
+
+  <h1 class="mat-title">Alle events</h1>
+  <md-card class="event-card" *ngFor="let event of events" role="group">
+    <md-card-header>
+    <md-card-title>{{event.name}}</md-card-title>
+      <md-card-subtitle *ngIf="isBestuursEvent(event)">Bestuur</md-card-subtitle>
+      <md-card-subtitle *ngIf="isKernEvent(event)">Kern</md-card-subtitle>
+      <md-card-subtitle *ngIf="isOpenbaarEvent(event)">Openbaar</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image class="event-card-cover-image" src="http://antwerp.carpediem.cd/data/afisha/o/d1/b4/d1b4584376.jpg" alt="eventCover">
+    <md-card-content>
+      <p>{{event.description}}</p>
+      <section ngif="event.todos">
+        <md-accordion>
+
+          <md-expansion-panel *ngFor="let todo of event.todos">
+            <md-expansion-panel-header>
+              {{todo.title}}
+            </md-expansion-panel-header>
+            <p>{{todo.description}}</p>
+            <md-checkbox ng-change="todoChecked(event.id, todo)">Completed</md-checkbox>
+          </md-expansion-panel>
+        </md-accordion>
+        <!--
+        <md-selection-list>
+          <md-list-option *ngFor="let todo of event.todos">{{todo.title}}</md-list-option>
+        </md-selection-list>
+        -->
+      </section>
+    </md-card-content>
+
+    <md-card-actions>
+      <button md-button>Knop 1</button>
+      <button md-button>Knop 2</button>
+    </md-card-actions>
+  </md-card>
+
+
+</section>
+
