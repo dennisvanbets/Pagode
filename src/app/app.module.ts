@@ -11,6 +11,7 @@ import {AppRoutingModule} from './routing/app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CustomMaterialModule} from './custom-material.module';
 import {UserService} from './service/user.service';
+import {EventService} from './service/event.service';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import {UserService} from './service/user.service';
     UserDetailComponent,
     PlanningComponent
   ],
-  providers: [UserService],
+  providers: [UserService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
