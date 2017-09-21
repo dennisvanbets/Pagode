@@ -2,9 +2,9 @@
   <span>Planning</span>
 </md-toolbar>
 
-<section id="allEvents" class="mat-typography" *ngIf="events">
 
-  <h1 class="mat-title">Alle events</h1>
+<section id="allEvents" class="mat-typography events-container" *ngIf="events">
+
   <md-card class="event-card" *ngFor="let event of events" role="group">
     <md-card-header>
     <md-card-title>{{event.name}}</md-card-title>
@@ -18,7 +18,7 @@
       <section ngif="event.todos">
         <md-accordion>
 
-          <md-expansion-panel *ngFor="let todo of event.todos">
+          <md-expansion-panel *ngFor="let todo of event.todos" [class.todo-panel-completed]="todo.isFinished">
             <md-expansion-panel-header>
               {{todo.title}}
             </md-expansion-panel-header>
